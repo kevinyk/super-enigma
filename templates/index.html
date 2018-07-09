@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <h2>List of all users</h2>
+    <form action="/search" method="POST">
+        Filter by name: <input type="text" name="search_name">
+        <input type="submit">
+    </form>
+    {% for user in users %}
+        <p>{{user['name']}}</p>
+    {% endfor %}
+    <fieldset>
+        <form action="/users" method="POST">
+            Name: <input type="text" name="name">
+            <input type="submit">
+        </form>
+    </fieldset>
+</body>
+</html>
